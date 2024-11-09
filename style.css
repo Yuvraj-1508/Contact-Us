@@ -1,0 +1,170 @@
+/* Set box-sizing to border-box for the entire document */
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+body,
+html {
+    height: 102%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Karla", serif;
+    font-weight: 400;
+    background-color: rgb(199, 218, 199);
+    padding: 20px;
+    margin: 0;
+    border-radius: 8px;
+    overflow-x: hidden;
+    min-height: 400px;
+}
+
+.container {
+    padding: 20px;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+form {
+    font-family: "Karla", serif;
+    font-weight: 400;
+}
+
+input,
+textarea,
+.form-check-label {
+    cursor: pointer;
+}
+
+h2 {
+    font-family: "Karla", serif;
+    font-weight: 400;
+}
+
+.form-control {
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+.radio-container {
+    display: inline-flex;
+    align-items: center;
+    gap: 20px;
+    padding: 10px 16px;
+    border: 1px solid hsl(169, 82%, 27%);
+    border-radius: 5px;
+    color: hsl(169, 82%, 27%);
+    cursor: pointer;
+    width: 273px;
+    max-width: 400px;
+    margin: 3px;
+}
+
+.radio-container:hover {
+    background-color: hsl(148, 38%, 91%);
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+input[type="radio"]:checked+.radio-container {
+    background-color: hsl(148, 38%, 91%);
+    border-color: hsl(169, 82%, 27%);
+    color: hsl(169, 82%, 27%);
+}
+
+.radio-custom {
+    width: 16px;
+    height: 16px;
+    border: 2px solid hsl(169, 82%, 27%);
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+}
+
+input[type="radio"]:checked+label .radio-custom::after {
+    content: "";
+    width: 8px;
+    height: 8px;
+    background-color: hsl(169, 82%, 27%);
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+button {
+    background-color: hsl(169, 82%, 27%);
+    border: 1px solid hsl(169, 82%, 27%);
+    width: 100%;
+    font-size: 18px;
+    height: 50px;
+    text-align: center;
+    color: white;
+    padding: 0;
+    border: none;
+    border-radius: 7px !important;
+    box-sizing: border-box;
+}
+
+button:hover {
+    background-color: hsl(169, 82%, 35%);
+    cursor: pointer;
+}
+
+.invalid-feedback {
+    display: none;
+    margin-top: 5px;
+}
+
+form.was-validated .invalid-feedback {
+    display: block;
+    margin-top: 10px;
+}
+
+.attribution {
+    font-size: 12px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+@media (max-width: 375px) {
+    .container {
+        max-width: 90%;
+    }
+
+    .radio-container {
+        width: 100%;
+        padding: 8px;
+        gap: 10px;
+    }
+
+    button {
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 1440px) {
+    .container {
+        max-width: 500px;
+    }
+
+    .radio-container {
+        width: 80%;
+        gap: 25px;
+    }
+
+    button {
+        font-size: 20px;
+    }
+}
